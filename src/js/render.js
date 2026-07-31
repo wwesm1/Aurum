@@ -1,7 +1,3 @@
-// ============================================
-// RENDER — inject collection, testimonials, gallery
-// ============================================
-
 import { COLLECTION, TESTIMONIALS, GALLERY } from './data.js'
 
 export function renderContent() {
@@ -29,7 +25,6 @@ export function renderContent() {
     `).join('')
   }
 
-  // Testimonials
   const tGrid = document.getElementById('testimonialsGrid')
   if (tGrid) {
     tGrid.innerHTML = TESTIMONIALS.map((t) => `
@@ -49,7 +44,6 @@ export function renderContent() {
     `).join('')
   }
 
-  // Gallery
   const gGrid = document.getElementById('galleryGrid')
   if (gGrid) {
     gGrid.innerHTML = GALLERY.map((src) => `
