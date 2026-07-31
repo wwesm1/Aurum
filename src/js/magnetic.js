@@ -1,7 +1,3 @@
-// ============================================
-// MAGNETIC BUTTONS + RIPPLE
-// ============================================
-
 export function initMagnetic() {
   const els = document.querySelectorAll('[data-magnetic]')
   els.forEach((el) => {
@@ -17,7 +13,6 @@ export function initMagnetic() {
     })
   })
 
-  // Ripple effect on .btn
   document.querySelectorAll('.btn').forEach((btn) => {
     btn.addEventListener('click', function (e) {
       const rect = btn.getBoundingClientRect()
