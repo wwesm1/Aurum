@@ -1,7 +1,3 @@
-// ============================================
-// NAVIGATION — scroll state, mega menu, search
-// ============================================
-
 export function initNav(lenis) {
   const nav = document.getElementById('nav')
   const menuBtn = document.getElementById('menuBtn')
@@ -11,7 +7,6 @@ export function initNav(lenis) {
   const searchClose = document.getElementById('searchClose')
   const searchOverlay = document.getElementById('searchOverlay')
 
-  // Scroll state
   const onScroll = () => {
     if (window.scrollY > 40) nav.classList.add('is-scrolled')
     else nav.classList.remove('is-scrolled')
@@ -19,7 +14,6 @@ export function initNav(lenis) {
   window.addEventListener('scroll', onScroll, { passive: true })
   onScroll()
 
-  // Mega menu
   const openMenu = () => {
     megaMenu.classList.add('is-open')
     document.body.style.overflow = 'hidden'
@@ -34,7 +28,6 @@ export function initNav(lenis) {
   menuClose && menuClose.addEventListener('click', closeMenu)
   megaMenu && megaMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu))
 
-  // Search overlay
   const openSearch = () => {
     searchOverlay.classList.add('is-open')
     document.body.style.overflow = 'hidden'
@@ -52,7 +45,6 @@ export function initNav(lenis) {
     if (e.target === searchOverlay) closeSearch()
   })
 
-  // Escape closes overlays
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeMenu()
