@@ -1,7 +1,3 @@
-// ============================================
-// DATA — Collection, testimonials, gallery
-// ============================================
-
 export const COLLECTION = [
   {
     id: 'obsidian',
@@ -86,7 +82,6 @@ export const GALLERY = [
   'https://images.pexels.com/photos/19838194/pexels-photo-19838194.jpeg?auto=compress&cs=tinysrgb&w=800',
 ]
 
-// Watch images for the 360 viewer finish switch
 export const VIEWER_FINISHES = {
   obsidian: 'https://images.pexels.com/photos/3829441/pexels-photo-3829441.jpeg?auto=compress&cs=tinysrgb&w=900',
   gold: 'https://images.pexels.com/photos/3916049/pexels-photo-3916049.jpeg?auto=compress&cs=tinysrgb&w=900',
