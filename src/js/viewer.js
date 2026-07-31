@@ -1,7 +1,3 @@
-// ============================================
-// 360 VIEWER — drag rotate, zoom, finish/strap switch
-// ============================================
-
 import gsap from 'gsap'
 import { VIEWER_FINISHES, VIEWER_MOVEMENT } from './data.js'
 
@@ -26,7 +22,6 @@ export function initViewer() {
     watch.style.transform = `rotateY(${rotation}deg) scale(${scale})`
   }
 
-  // Auto rotate loop
   const autoLoop = () => {
     if (autoRotate && !isDragging) {
       rotation += 0.2
@@ -36,7 +31,6 @@ export function initViewer() {
   }
   autoLoop()
 
-  // Drag
   const onDown = (e) => {
     isDragging = true
     autoRotate = false
@@ -64,7 +58,6 @@ export function initViewer() {
   window.addEventListener('touchmove', onMove, { passive: true })
   window.addEventListener('touchend', onUp)
 
-  // Zoom slider
   if (zoomSlider) {
     zoomSlider.addEventListener('input', (e) => {
       scale = parseInt(e.target.value, 10) / 100
@@ -72,7 +65,6 @@ export function initViewer() {
     })
   }
 
-  // Finish switch
   if (finishSwatches) {
     finishSwatches.querySelectorAll('.viewer__controls-swatch').forEach((sw) => {
       sw.addEventListener('click', () => {
@@ -88,7 +80,6 @@ export function initViewer() {
     })
   }
 
-  // Strap switch (visual feedback only — same image set)
   if (strapSwatches) {
     strapSwatches.querySelectorAll('.viewer__controls-swatch').forEach((sw) => {
       sw.addEventListener('click', () => {
@@ -98,8 +89,7 @@ export function initViewer() {
       })
     })
   }
-
-  // Reveal movement toggle
+  
   if (movementToggle) {
     movementToggle.addEventListener('click', () => {
       movementOpen = !movementOpen
