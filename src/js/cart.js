@@ -1,12 +1,8 @@
-// ============================================
-// CART — drawer, add-to-cart fly animation, checkout
-// ============================================
-
 import gsap from 'gsap'
 import { COLLECTION } from './data.js'
 
 const state = {
-  items: [], // {id, name, price, img, qty}
+  items: [], 
 }
 
 const fmt = (n) => `$${n.toLocaleString()}`
@@ -37,7 +33,6 @@ export function initCart() {
   cartClose && cartClose.addEventListener('click', closeCart)
   overlay && overlay.addEventListener('click', closeCart)
 
-  // Checkout
   const openCheckout = () => {
     if (!state.items.length) return
     renderSummary()
@@ -58,18 +53,15 @@ export function initCart() {
     if (e.target === checkout) closeCheckout()
   })
 
-  // Submit
   checkoutForm && checkoutForm.addEventListener('submit', (e) => {
     e.preventDefault()
     checkoutForm.classList.add('hidden')
     checkoutSuccess.classList.remove('hidden')
-    // Clear cart
     state.items = []
     renderCart()
     setTimeout(() => closeCheckout(), 2600)
   })
 
-  // Card number formatting
   const coCard = document.getElementById('coCard')
   if (coCard) {
     coCard.addEventListener('input', (e) => {
@@ -79,7 +71,6 @@ export function initCart() {
     })
   }
 
-  // Delegate add-to-cart clicks
   document.addEventListener('click', (e) => {
     const addBtn = e.target.closest('.watch-card__add')
     if (addBtn) {
@@ -90,7 +81,6 @@ export function initCart() {
     }
   })
 
-  // Delegate qty + remove
   document.getElementById('cartItems').addEventListener('click', (e) => {
     const inc = e.target.closest('[data-inc]')
     const dec = e.target.closest('[data-dec]')
@@ -108,7 +98,6 @@ function addToCart(item, btn, card) {
   if (existing) existing.qty++
   else state.items.push({ ...item, qty: 1 })
 
-  // Fly animation
   const cardImg = card.querySelector('img')
   const cartBtnEl = document.getElementById('cartBtn')
   if (cardImg && cartBtnEl) {
@@ -131,14 +120,12 @@ function addToCart(item, btn, card) {
       ease: 'expo.in',
       onComplete: () => {
         clone.remove()
-        // Cart bump
         gsap.fromTo(cartBtnEl, { scale: 1 }, { scale: 1.3, duration: 0.2, yoyo: true, repeat: 1 })
       },
     })
   }
 
   renderCart()
-  // Brief open hint
   const cart = document.getElementById('cart')
   if (!cart.classList.contains('is-open')) {
     gsap.fromTo(cart, { x: 40 }, { x: 0, duration: 0.4, ease: 'expo.out' })
