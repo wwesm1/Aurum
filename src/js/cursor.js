@@ -1,7 +1,3 @@
-// ============================================
-// CUSTOM CURSOR
-// ============================================
-
 export function initCursor() {
   const cursor = document.getElementById('cursor')
   const dot = document.getElementById('cursorDot')
@@ -20,7 +16,6 @@ export function initCursor() {
     dot.style.top = `${mouseY}px`
   })
 
-  // Smooth ring follow via rAF
   const animateRing = () => {
     ringX += (mouseX - ringX) * 0.18
     ringY += (mouseY - ringY) * 0.18
@@ -30,7 +25,6 @@ export function initCursor() {
   }
   animateRing()
 
-  // Hover state on interactive elements
   const hoverSelector = 'a, button, [data-magnetic], .watch-card, .viewer__canvas, .viewer__controls-swatch, .nav__icon-btn'
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(hoverSelector)) cursor.classList.add('is-hovering')
