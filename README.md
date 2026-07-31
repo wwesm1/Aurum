@@ -1,6 +1,6 @@
-# ⌚ Chronos — Luxury Watch Website
+# ⌚ Aurum — Luxury Watch Website
 
-> A premium luxury watch landing page featuring cinematic storytelling, immersive animations, and an elegant dark interface inspired by world-class luxury brands.
+> A premium luxury watch landing page featuring cinematic storytelling, immersive animations, and an elegant dark interface inspired by the world's finest watchmakers.
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
@@ -15,66 +15,66 @@
 
 ---
 
-# ✨ Overview
+## ✨ Overview
 
-Chronos is a modern luxury watch website built to deliver an immersive digital experience through elegant typography, cinematic animations, premium product presentation, and sophisticated UI design.
+**Aurum** is a modern luxury watch website crafted to deliver a cinematic digital experience through elegant typography, premium product storytelling, and sophisticated animations. Inspired by prestigious watchmakers and award-winning web design, the website emphasizes visual excellence, smooth interactions, and an immersive browsing experience.
 
-Rather than functioning as a typical e-commerce website, the project focuses on storytelling, visual excellence, and high-end user experience inspired by luxury brands such as Rolex, Richard Mille, and Patek Philippe.
+Instead of functioning as a traditional online store, Aurum showcases luxury craftsmanship with refined aesthetics and engaging storytelling that reflects the exclusivity of high-end timepieces.
 
 ---
 
-# 🎯 Features
+## 🎯 Features
 
 ### 🖤 Premium Dark Theme
 
-- Elegant black color palette
+- Elegant black and charcoal color palette
 - Luxury gold accents
-- Glassmorphism elements
+- Glassmorphism UI elements
 - High-contrast typography
-- Beautiful gradients
+- Beautiful gradients and lighting effects
 
 ### ⚡ Modern Animations
 
 - Smooth scrolling
 - Scroll-triggered animations
 - Animated typography
-- Image reveals
-- Hover interactions
+- Image reveal effects
+- Interactive hover animations
 - Button micro-interactions
-- Fade & scale effects
+- Fade, scale, and parallax transitions
 
-### ⌚ Product Experience
+### ⌚ Luxury Showcase
 
-- Featured luxury watches
+- Featured watch collection
 - Interactive product cards
-- Premium product gallery
 - Storytelling sections
-- Product highlights
+- Premium gallery
+- Product highlights and specifications
 
-### 🎥 Immersive Design
+### 🎥 Immersive Experience
 
-- Video backgrounds
-- Luxury photography
-- Elegant spacing
-- Modern layouts
+- Cinematic layouts
+- Elegant section transitions
+- Luxury-inspired imagery
 - Responsive design
+- Interactive user experience
 
 ### 🛒 Shopping Experience
 
-- Animated cart
-- Smooth transitions
-- Interactive buttons
-- Premium UI components
+- Animated shopping cart
+- Smooth UI transitions
+- Premium interface components
+- Interactive call-to-action buttons
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 - HTML5
 - SCSS
 - Vanilla JavaScript (ES6+)
 
-Libraries (if used)
+### Libraries
 
 - GSAP
 - ScrollTrigger
@@ -83,89 +83,62 @@ Libraries (if used)
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```
-Luxury-Watch-Website/
+Aurum/
 │
 ├── index.html
-│
 ├── css/
-│   └── style.css
-│
 ├── scss/
-│   ├── base/
-│   ├── layout/
-│   ├── components/
-│   ├── pages/
-│   ├── utilities/
-│   ├── abstracts/
-│   └── main.scss
-│
 ├── js/
-│   ├── main.js
-│   ├── animations.js
-│   ├── slider.js
-│   └── cart.js
-│
 ├── assets/
 │   ├── images/
 │   ├── videos/
 │   └── icons/
-│
 └── README.md
 ```
 
 ---
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
-Clone the repository
-
-```bash
-git clone https://github.com/yourusername/luxury-watch-website.git
-```
-
-Navigate into the project
+Clone the repository:
 
 ```bash
-cd luxury-watch-website
+git clone https://github.com/yourusername/aurum.git
 ```
 
-Compile SCSS
+Navigate into the project:
+
+```bash
+cd aurum
+```
+
+Compile SCSS:
 
 ```bash
 sass --watch scss:css
 ```
 
-Run the project
-
-Simply open:
-
-```
-index.html
-```
-
-or use VS Code Live Server.
+Run the project by opening `index.html` in your browser or using the VS Code Live Server extension.
 
 ---
 
-# 💎 Design Goals
+## 🎨 Design Philosophy
 
-The website was designed around four principles:
+Aurum was designed around four core principles:
 
-- Luxury aesthetics
-- Smooth interactions
-- Minimal elegance
-- High-performance animations
-
-Every section aims to create the feeling of browsing an expensive luxury brand rather than a standard online store.
+- **Luxury** — Every visual element conveys elegance and exclusivity.
+- **Storytelling** — Smooth scrolling guides users through the craftsmanship behind each watch.
+- **Performance** — Optimized animations and clean code ensure a seamless experience.
+- **Minimalism** — A refined interface where every detail has a purpose.
 
 ---
 
-# 📱 Responsive
+## 📱 Responsive Design
 
-Optimized for
+Optimized for:
 
 - Desktop
 - Laptop
@@ -174,7 +147,7 @@ Optimized for
 
 ---
 
-# 🎨 Color Palette
+## 🎨 Color Palette
 
 | Color | Hex |
 |--------|------|
@@ -186,80 +159,65 @@ Optimized for
 
 ---
 
-# 🔥 Future Improvements
+## 🚀 Future Enhancements
 
 - 360° watch viewer
-- Product customization
+- Watch customization
 - Wishlist functionality
-- Shopping cart checkout
-- Dark/Light theme switcher
+- Checkout experience
 - Product search
+- Authentication system
 - Backend integration
 - Payment gateway
-- User authentication
-- Wishlist synchronization
+- AI-powered recommendations
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-Add screenshots here.
+Add project screenshots here.
 
 ```
 assets/screenshots/
-
-hero.png
-collection.png
-storytelling.png
-footer.png
+├── hero.png
+├── collection.png
+├── craftsmanship.png
+└── footer.png
 ```
 
 ---
 
-# ⚡ Performance
+## ⚡ Performance
 
-- Optimized assets
-- Semantic HTML
-- Responsive images
-- Smooth 60 FPS animations
+- Semantic HTML5
 - Modular SCSS architecture
-- Clean JavaScript structure
+- Optimized assets
+- Responsive layouts
+- Smooth 60 FPS animations
+- Clean and maintainable JavaScript
 
 ---
 
-# 📖 Inspiration
+## 💡 Inspiration
 
-Inspired by the design philosophy of:
-
-- Apple
-- Rolex
-- Richard Mille
-- Porsche
-- Bang & Olufsen
-- Awwwards-winning websites
+Inspired by the elegance and craftsmanship of luxury brands together with modern, award-winning web experiences.
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Hulkaroy Normurodova**
 
-Frontend Developer passionate about creating immersive digital experiences with modern web technologies.
-
-GitHub: https://github.com/yourusername
-
-Portfolio: https://yourportfolio.com
+Frontend Developer passionate about building immersive, visually engaging, and high-performance web experiences.
 
 ---
 
-# 📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
 
-Feel free to use this project for learning, inspiration, or personal portfolio purposes.
+Feel free to use it for learning, inspiration, or your personal portfolio.
 
 ---
 
-## ⭐ If you enjoyed this project
-
-Give it a ⭐ on GitHub and share your feedback!
+### ⭐ If you enjoyed this project, consider giving it a star on GitHub!
