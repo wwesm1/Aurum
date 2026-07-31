@@ -1,7 +1,3 @@
-// ============================================
-// SCROLL ANIMATIONS — GSAP + ScrollTrigger
-// ============================================
-
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Splitting from 'splitting'
@@ -9,7 +5,6 @@ import Splitting from 'splitting'
 gsap.registerPlugin(ScrollTrigger)
 
 export function initScrollAnimations() {
-  // Count-up stats
   const counters = document.querySelectorAll('[data-count]')
   counters.forEach((el) => {
     const target = parseInt(el.dataset.count, 10)
@@ -31,7 +26,6 @@ export function initScrollAnimations() {
     })
   })
 
-  // Generic reveal for [data-animate]
   document.querySelectorAll('[data-animate]').forEach((el) => {
     gsap.set(el, { opacity: 0, y: 40 })
     ScrollTrigger.create({
@@ -44,7 +38,6 @@ export function initScrollAnimations() {
     })
   })
 
-  // Story timeline steps — alternating reveal
   document.querySelectorAll('.story__step').forEach((step) => {
     const text = step.querySelector('.story__step-text')
     const img = step.querySelector('.story__step-img')
@@ -66,7 +59,6 @@ export function initScrollAnimations() {
     })
   })
 
-  // Feature items — image clip reveal
   document.querySelectorAll('.features__item').forEach((item) => {
     const media = item.querySelector('.features__item-media')
     const text = item.querySelector('.features__item-text')
@@ -88,7 +80,6 @@ export function initScrollAnimations() {
     })
   })
 
-  // Collection cards stagger
   const cards = document.querySelectorAll('.watch-card')
   if (cards.length) {
     gsap.set(cards, { opacity: 0, y: 60 })
@@ -102,7 +93,6 @@ export function initScrollAnimations() {
     })
   }
 
-  // Testimonials stagger
   const testimonials = document.querySelectorAll('.testimonial')
   if (testimonials.length) {
     gsap.set(testimonials, { opacity: 0, y: 50 })
@@ -116,7 +106,6 @@ export function initScrollAnimations() {
     })
   }
 
-  // Gallery items fade in
   const galleryItems = document.querySelectorAll('.gallery__item')
   if (galleryItems.length) {
     gsap.set(galleryItems, { opacity: 0, y: 30 })
@@ -130,7 +119,6 @@ export function initScrollAnimations() {
     })
   }
 
-  // Section headings split + reveal
   document.querySelectorAll('.h-section').forEach((h) => {
     if (h.closest('.hero')) return
     Splitting({ target: h, by: 'words' })
@@ -148,7 +136,6 @@ export function initScrollAnimations() {
     }
   })
 
-  // Parallax on story images
   document.querySelectorAll('.story__step-img img').forEach((img) => {
     gsap.fromTo(img,
       { y: -20 },
@@ -165,7 +152,6 @@ export function initScrollAnimations() {
     )
   })
 
-  // Footer giant text parallax
   const giant = document.querySelector('.footer__giant')
   if (giant) {
     gsap.to(giant, {
@@ -180,7 +166,6 @@ export function initScrollAnimations() {
     })
   }
 
-  // Video section content reveal
   const videoContent = document.querySelector('.video__content')
   if (videoContent) {
     gsap.fromTo(videoContent,
