@@ -1,14 +1,9 @@
-// ============================================
-// LOADER — Luxury loading screen
-// ============================================
-
 export function initLoader(onComplete) {
   const loader = document.getElementById('loader')
   const bar = document.getElementById('loaderBar')
   const count = document.getElementById('loaderCount')
   const brand = document.getElementById('loaderBrand')
 
-  // Split brand into chars for stagger reveal
   if (brand) {
     const text = brand.textContent
     brand.innerHTML = ''
@@ -32,7 +27,6 @@ export function initLoader(onComplete) {
       setTimeout(tick, 180 + Math.random() * 220)
     } else {
       setTimeout(() => {
-        // Reveal brand chars
         const chars = brand ? brand.querySelectorAll('.char') : []
         chars.forEach((ch) => {
           ch.style.transition = 'transform 0.9s cubic-bezier(0.16,1,0.3,1)'
@@ -46,7 +40,6 @@ export function initLoader(onComplete) {
     }
   }
 
-  // Start after a brief beat so the chars animate from hidden
   setTimeout(() => {
     const chars = brand ? brand.querySelectorAll('.char') : []
     chars.forEach((ch) => {
