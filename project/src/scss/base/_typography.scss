@@ -1,0 +1,67 @@
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+h1, h2, h3, h4 {
+  font-family: $font-display;
+  font-weight: $fw-light;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.h-display {
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
+  font-weight: $fw-light;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.h-section {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: $fw-light;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.h-card {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: $fw-regular;
+}
+
+.eyebrow {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  font-weight: $fw-medium;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+.lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+  line-height: 1.6;
+  color: $text-secondary;
+  font-weight: $fw-light;
+}
+
+.body-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $text-secondary;
+}
+
+.mono {
+  font-family: $font-mono;
+  letter-spacing: 0.05em;
+}
+
+.text-gold {
+  @include gold-text;
+}
+
+.text-muted {
+  color: $text-muted;
+}

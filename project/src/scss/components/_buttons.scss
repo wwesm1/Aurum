@@ -1,0 +1,145 @@
+// ============================================
+// COMPONENT — Buttons
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  padding: $space-2 $space-5;
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  font-weight: $fw-medium;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: $radius-pill;
+  transition: all $dur-med $ease-lux;
+  @include focus-ring;
+  white-space: nowrap;
+
+  // Magnetic wrapper
+  &__label {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: $space-1;
+  }
+
+  &__shine {
+    position: absolute;
+    inset: 0;
+    background: $gold-sheen;
+    transform: translateX(-100%);
+    transition: transform 0.7s $ease-lux;
+    z-index: 1;
+  }
+
+  &:hover &__shine {
+    transform: translateX(100%);
+  }
+
+  &--primary {
+    background: $gold-gradient;
+    color: $black;
+    box-shadow: $gold-glow;
+    &:hover {
+      box-shadow: $gold-glow-strong;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--ghost {
+    background: $glass-bg;
+    backdrop-filter: blur($glass-blur);
+    -webkit-backdrop-filter: blur($glass-blur);
+    border: 1px solid $glass-border;
+    color: $text-primary;
+    &:hover {
+      border-color: $gold-glass-border;
+      background: $gold-glass-bg;
+      color: $accent-light;
+    }
+  }
+
+  &--link {
+    padding: 0;
+    border-radius: 0;
+    color: $accent;
+    background: none;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $gold-gradient;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform $dur-med $ease-lux;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+
+  &--block {
+    width: 100%;
+  }
+}
+
+// Ripple
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-anim 0.7s $ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+// Floating label input
+.field {
+  position: relative;
+  input, textarea {
+    width: 100%;
+    padding: $space-3 0 $space-1;
+    border-bottom: 1px solid $glass-border;
+    background: transparent;
+    color: $text-primary;
+    font-size: 1rem;
+    &:focus { outline: none; border-bottom-color: $accent; }
+  }
+  label {
+    position: absolute;
+    left: 0;
+    top: $space-3;
+    color: $text-muted;
+    pointer-events: none;
+    transition: all $dur-fast $ease-lux;
+    font-size: 1rem;
+  }
+  input:focus + label,
+  input:not(:placeholder-shown) + label,
+  textarea:focus + label,
+  textarea:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 0.7rem;
+    color: $accent;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+}

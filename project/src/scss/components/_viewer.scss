@@ -1,0 +1,183 @@
+// ============================================
+// SECTION — 360 Viewer
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.viewer {
+  position: relative;
+  background: $charcoal;
+  @include section-padding;
+  overflow: hidden;
+
+  &__bg {
+    @include absolute-fill;
+    background: radial-gradient(ellipse at center, rgba($gold, 0.06), transparent 60%);
+    pointer-events: none;
+  }
+
+  &__head {
+    @include container;
+    text-align: center;
+    margin-bottom: $space-10;
+    .eyebrow { margin-bottom: $space-2; }
+  }
+
+  &__stage {
+    @include container;
+    max-width: 1200px;
+    @include flex(row, center, center);
+    gap: $space-8;
+    flex-wrap: wrap;
+
+    @include mq($bp-lg) { flex-direction: column; }
+  }
+
+  &__canvas {
+    position: relative;
+    width: min(500px, 80vw);
+    aspect-ratio: 1;
+    @include flex;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba($gold, 0.08), transparent 70%);
+    cursor: grab;
+    user-select: none;
+    perspective: 1000px;
+
+    &-watch {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform-style: preserve-3d;
+      will-change: transform;
+      filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.6));
+    }
+
+    &-halo {
+      @include absolute-fill;
+      border-radius: 50%;
+      border: 1px solid rgba($gold, 0.15);
+      animation: spin-slow 60s linear infinite;
+      pointer-events: none;
+    }
+  }
+
+  &__controls {
+    width: min(360px, 90vw);
+    @include glass;
+    border-radius: $radius-lg;
+    padding: $space-5;
+    @include flex(column, flex-start, flex-start, $space-4);
+
+    h3 { font-family: $font-display; font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: $fw-regular; margin-bottom: $space-1; }
+    p { font-size: 0.9rem; line-height: 1.7; color: $text-secondary; margin-bottom: $space-3; }
+
+    &-group {
+      width: 100%;
+      label {
+        font-family: $font-mono;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $text-muted;
+        margin-bottom: $space-2;
+        display: block;
+      }
+    }
+
+    &-swatches {
+      @include flex(row, flex-start, center, $space-2);
+      flex-wrap: wrap;
+    }
+
+    &-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all $dur-fast $ease-lux;
+      position: relative;
+      &.is-active {
+        border-color: $gold;
+        box-shadow: $gold-glow;
+      }
+      &::after {
+        content: '';
+        @include absolute-fill;
+        border-radius: 50%;
+        border: 1px solid $glass-border;
+      }
+    }
+
+    &-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 2px;
+      background: $glass-border;
+      border-radius: $radius-pill;
+      outline: none;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $gold-gradient;
+        cursor: pointer;
+        box-shadow: $gold-glow;
+      }
+      &::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $gold;
+        cursor: pointer;
+        border: none;
+      }
+    }
+
+    &-toggle {
+      @include flex(row, space-between, center);
+      width: 100%;
+      padding: $space-2 0;
+      cursor: pointer;
+      span { font-size: 0.9rem; }
+      &-switch {
+        width: 40px;
+        height: 22px;
+        background: $glass-border;
+        border-radius: $radius-pill;
+        position: relative;
+        transition: background $dur-fast $ease-lux;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          width: 16px;
+          height: 16px;
+          background: $gold-bright;
+          border-radius: 50%;
+          transition: transform $dur-fast $ease-lux;
+        }
+      }
+      &.is-on &-switch {
+        background: $gold-deep;
+        &::after { transform: translateX(18px); }
+      }
+    }
+  }
+
+  &__hint {
+    @include container;
+    text-align: center;
+    margin-top: $space-6;
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: $text-muted;
+  }
+}

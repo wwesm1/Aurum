@@ -1,0 +1,99 @@
+// ============================================
+// LUXURY WATCH — DESIGN TOKENS
+// ============================================
+
+// ---- Color palette ----
+$black: #050505;
+$black-soft: #0a0a0a;
+$charcoal: #121212;
+$charcoal-light: #1a1a1a;
+$graphite: #232323;
+$smoke: #2c2c2c;
+
+$gold: #c5a572;
+$gold-light: #e6cfa3;
+$gold-bright: #f0dcb4;
+$gold-deep: #9a7d4f;
+$gold-shadow: #6b5532;
+
+$white: #f5f3ef;
+$white-soft: #d8d4cc;
+$white-dim: #8a8780;
+
+// ---- Semantic colors ----
+$bg-primary: $black;
+$bg-secondary: $charcoal;
+$bg-elevated: $charcoal-light;
+$accent: $gold;
+$accent-light: $gold-light;
+$text-primary: $white;
+$text-secondary: $white-soft;
+$text-muted: $white-dim;
+
+// ---- Glassmorphism ----
+$glass-bg: rgba(255, 255, 255, 0.04);
+$glass-border: rgba(255, 255, 255, 0.08);
+$glass-blur: 18px;
+$gold-glass-bg: rgba(197, 165, 114, 0.08);
+$gold-glass-border: rgba(197, 165, 114, 0.18);
+
+// ---- Gradients ----
+$gold-gradient: linear-gradient(135deg, $gold-bright 0%, $gold 45%, $gold-deep 100%);
+$gold-sheen: linear-gradient(110deg, transparent 25%, rgba(240, 220, 180, 0.5) 50%, transparent 75%);
+$dark-gradient: radial-gradient(ellipse at top, $charcoal 0%, $black 70%);
+$metallic: linear-gradient(145deg, #3a3a3a 0%, #1a1a1a 40%, #2a2a2a 60%, #0d0d0d 100%);
+
+// ---- Typography ----
+$font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+$font-body: 'Manrope', 'Space Grotesk', system-ui, sans-serif;
+$font-mono: 'Space Grotesk', monospace;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// ---- Spacing (8px system) ----
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2rem;
+$space-5: 2.5rem;
+$space-6: 3rem;
+$space-8: 4rem;
+$space-10: 5rem;
+$space-12: 6rem;
+$space-16: 8rem;
+$space-20: 10rem;
+
+// ---- Layout ----
+$container-max: 1400px;
+$container-narrow: 860px;
+$gutter: 2rem;
+$radius-sm: 4px;
+$radius-md: 12px;
+$radius-lg: 24px;
+$radius-pill: 100px;
+
+// ---- Shadows ----
+$shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.4);
+$shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.6);
+$gold-glow: 0 0 40px rgba(197, 165, 114, 0.25);
+$gold-glow-strong: 0 0 60px rgba(197, 165, 114, 0.4);
+
+// ---- Transitions ----
+$ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$dur-fast: 0.3s;
+$dur-med: 0.6s;
+$dur-slow: 1s;
+$dur-cine: 1.4s;
+
+// ---- Breakpoints ----
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1600px;

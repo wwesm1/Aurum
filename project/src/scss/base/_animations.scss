@@ -1,0 +1,84 @@
+// ============================================
+// ANIMATIONS / KEYFRAMES
+// ============================================
+
+@use '../variables' as *;
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(0.5deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes light-sweep {
+  0% { transform: translateX(-120%) rotate(15deg); opacity: 0; }
+  30% { opacity: 0.6; }
+  60% { opacity: 0.3; }
+  100% { transform: translateX(120%) rotate(15deg); opacity: 0; }
+}
+
+@keyframes dust-drift {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.4; }
+  100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes loader-progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+// Utility animation classes
+.anim-float { animation: float-soft 6s ease-in-out infinite; }
+.anim-float-slow { animation: float-slow 4s ease-in-out infinite; }
+.anim-spin-slow { animation: spin-slow 40s linear infinite; }
+.anim-spin-reverse { animation: spin-reverse 60s linear infinite; }
+.anim-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+
+// GSAP initial states (prevents FOUC)
+[data-animate] {
+  opacity: 0;
+}
+[data-animate-fade] {
+  opacity: 0;
+}

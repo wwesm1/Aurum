@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AURUM — Time Beyond Perfection. Crafted for those who own every second. Luxury Swiss watches engineered to perfection." />
+    <title>AURUM — Time Beyond Perfection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ===== LOADER ===== -->
+    <div class="loader" id="loader">
+      <div class="loader__brand" id="loaderBrand">AURUM</div>
+      <div class="loader__bar"><div class="loader__bar-fill" id="loaderBar"></div></div>
+      <div class="loader__count" id="loaderCount">0%</div>
+    </div>
+
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor" id="cursor">
+      <div class="cursor__dot" id="cursorDot"></div>
+      <div class="cursor__ring" id="cursorRing"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+        <a href="#hero" class="nav__brand">AU<span>RUM</span></a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#story">Heritage</a>
+          <a href="#viewer">Atelier</a>
+          <a href="#collections">Collection</a>
+          <a href="#features">Engineering</a>
+          <a href="#gallery">Gallery</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__icon-btn" id="searchBtn" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <button class="nav__icon-btn" id="cartBtn" aria-label="Open cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </button>
+          <button class="nav__icon-btn nav__burger" id="menuBtn" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== MEGA MENU ===== -->
+    <div class="mega-menu" id="megaMenu">
+      <button class="nav__icon-btn mega-menu__close" id="menuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <a href="#story">Heritage</a>
+      <a href="#viewer">Atelier</a>
+      <a href="#collections">Collection</a>
+      <a href="#features">Engineering</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- ===== SEARCH OVERLAY ===== -->
+    <div class="search-overlay" id="searchOverlay">
+      <button class="nav__icon-btn search-overlay__close" id="searchClose" aria-label="Close search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <input type="text" class="search-overlay__input" id="searchInput" placeholder="Search the collection…" aria-label="Search" />
+    </div>
+
+    <main>
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="hero">
+        <div class="hero__lighting"></div>
+        <div class="hero__ray"></div>
+        <div class="hero__particles" id="heroParticles"></div>
+
+        <div class="hero__watch" id="heroWatch">
+          <div class="hero__watch-glow"></div>
+          <div class="hero__watch-ring"></div>
+          <img class="hero__watch-img" id="heroWatchImg" src="https://images.pexels.com/photos/15019856/pexels-photo-15019856.jpeg?auto=compress&cs=tinysrgb&w=900" alt="AURUM flagship luxury watch in a dark showroom" loading="eager" />
+        </div>
+
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow" data-animate>Swiss Haute Horlogerie · Est. 1887</p>
+          <h1 class="hero__title" id="heroTitle">Time Beyond Perfection</h1>
+          <p class="lead hero__subtitle" data-animate>Crafted for those who own every second.</p>
+          <div class="hero__actions" data-animate>
+            <a href="#collections" class="btn btn--primary" data-magnetic><span class="btn__shine"></span><span class="btn__label">Explore Collection</span></a>
+            <a href="#story" class="btn btn--ghost" data-magnetic><span class="btn__shine"></span><span class="btn__label">Discover Craftsmanship</span></a>
+          </div>
+        </div>
+
+        <div class="hero__scroll" data-animate>
+          <span>Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ===== STORYTELLING ===== -->
+      <section class="story" id="story">
+        <div class="story__intro">
+          <p class="eyebrow" data-animate>The Making of a Masterpiece</p>
+          <h2 class="h-section" data-animate>Four centuries of obsession,<br>distilled into a single second.</h2>
+          <p class="lead" data-animate>Every AURUM timepiece is the result of an uncompromising pursuit — where raw titanium, sapphire and gold are shaped by hand into an instrument that measures not just time, but legacy.</p>
+        </div>
+
+        <div class="story__timeline">
+          <div class="story__step" data-animate>
+            <div class="story__step-text">
+              <p class="step-num">01 — Design</p>
+              <h3>Conceived in shadow, revealed in gold</h3>
+              <p>Each silhouette begins as a single sketch, refined over 400 hours until proportion, weight and light converge into something inevitable.</p>
+            </div>
+            <div class="story__step-img"><img src="https://images.pexels.com/photos/9453448/pexels-photo-9453448.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Watch design close-up on dark background" loading="lazy" /></div>
+            <div class="story__step-dot"></div>
+          </div>
+
+          <div class="story__step" data-animate>
+            <div class="story__step-text">
+              <p class="step-num">02 — Movement</p>
+              <h3>The beating heart, assembled in silence</h3>
+              <p>312 components. 47 jewels. A perpetual motion engineered to deviate by less than two seconds across five days — a tolerance only the patient can achieve.</p>
+            </div>
+            <div class="story__step-img"><img src="https://images.pexels.com/photos/32942760/pexels-photo-32942760.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Mechanical watch movement gears" loading="lazy" /></div>
+            <div class="story__step-dot"></div>
+          </div>
+
+          <div class="story__step" data-animate>
+            <div class="story__step-text">
+              <p class="step-num">03 — Materials</p>
+              <h3>Grade-5 titanium, sapphire, 18k gold</h3>
+              <p>We source a single sapphire crystal per case — grown over 16 days, polished to optical clarity, harder than steel and more transparent than glass.</p>
+            </div>
+            <div class="story__step-img"><img src="https://images.pexels.com/photos/3916049/pexels-photo-3916049.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Gold watch face with leather strap" loading="lazy" /></div>
+            <div class="story__step-dot"></div>
+          </div>
+
+          <div class="story__step" data-animate>
+            <div class="story__step-text">
+              <p class="step-num">04 — Craftsmanship</p>
+              <h3>Finished by hand, signed by its maker</h3>
+              <p>A single master watchmaker assembles, regulates and seals each timepiece, then engraves their initials beneath the balance wheel — a covenant of accountability.</p>
+            </div>
+            <div class="story__step-img"><img src="https://images.pexels.com/photos/8327874/pexels-photo-8327874.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Watchmaker hands assembling a watch" loading="lazy" /></div>
+            <div class="story__step-dot"></div>
+          </div>
+        </div>
+
+        <div class="story__stats" data-animate>
+          <div class="story__stat"><div class="story__stat-num" data-count="312">0</div><div class="story__stat-label">Components</div></div>
+          <div class="story__stat"><div class="story__stat-num" data-count="400">0</div><div class="story__stat-label">Hours Per Piece</div></div>
+          <div class="story__stat"><div class="story__stat-num" data-count="47">0</div><div class="story__stat-label">Jewels</div></div>
+          <div class="story__stat"><div class="story__stat-num" data-count="1887">0</div><div class="story__stat-label">Founded</div></div>
+        </div>
+      </section>
+
+      <!-- ===== 360 VIEWER ===== -->
+      <section class="viewer" id="viewer">
+        <div class="viewer__bg"></div>
+        <div class="viewer__head">
+          <p class="eyebrow" data-animate>The Atelier</p>
+          <h2 class="h-section" data-animate>Hold it in your hands</h2>
+        </div>
+        <div class="viewer__stage">
+          <div class="viewer__canvas" id="viewerCanvas">
+            <div class="viewer__canvas-halo"></div>
+            <img class="viewer__canvas-watch" id="viewerWatch" src="https://images.pexels.com/photos/3829441/pexels-photo-3829441.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Interactive 360 degree watch viewer" loading="lazy" />
+          </div>
+          <div class="viewer__controls" data-animate>
+            <h3>Configure yours</h3>
+            <p>Drag the timepiece to rotate. Adjust the finish and strap below.</p>
+
+            <div class="viewer__controls-group">
+              <label>Finish</label>
+              <div class="viewer__controls-swatches" id="finishSwatches">
+                <button class="viewer__controls-swatch is-active" data-finish="obsidian" style="background:linear-gradient(135deg,#1a1a1a,#050505)" aria-label="Obsidian"></button>
+                <button class="viewer__controls-swatch" data-finish="gold" style="background:linear-gradient(135deg,#f0dcb4,#9a7d4f)" aria-label="Gold"></button>
+                <button class="viewer__controls-swatch" data-finish="titanium" style="background:linear-gradient(135deg,#6a6a6a,#2a2a2a)" aria-label="Titanium"></button>
+                <button class="viewer__controls-swatch" data-finish="emerald" style="background:linear-gradient(135deg,#1d4d3a,#0a1f17)" aria-label="Emerald"></button>
+              </div>
+            </div>
+
+            <div class="viewer__controls-group">
+              <label>Strap</label>
+              <div class="viewer__controls-swatches" id="strapSwatches">
+                <button class="viewer__controls-swatch is-active" data-strap="leather" style="background:linear-gradient(135deg,#3a2418,#1a120a)" aria-label="Leather"></button>
+                <button class="viewer__controls-swatch" data-strap="titanium" style="background:linear-gradient(135deg,#5a5a5a,#1a1a1a)" aria-label="Titanium"></button>
+                <button class="viewer__controls-swatch" data-strap="rubber" style="background:linear-gradient(135deg,#0a0a0a,#000)" aria-label="Rubber"></button>
+              </div>
+            </div>
+
+            <div class="viewer__controls-group">
+              <label>Zoom</label>
+              <input type="range" class="viewer__controls-slider" id="zoomSlider" min="80" max="140" value="100" aria-label="Zoom" />
+            </div>
+
+            <div class="viewer__controls-toggle" id="movementToggle">
+              <span>Reveal movement</span>
+              <div class="viewer__controls-toggle-switch"></div>
+            </div>
+          </div>
+        </div>
+        <p class="viewer__hint" data-animate>Drag to rotate · Scroll to zoom</p>
+      </section>
+
+      <!-- ===== COLLECTIONS ===== -->
+      <section class="collections" id="collections">
+        <div class="collections__head">
+          <p class="eyebrow" data-animate>The Collection</p>
+          <h2 class="h-section" data-animate>Five expressions of one obsession</h2>
+          <p data-animate>Each reference is a distinct character — united by the same uncompromising movement and the same hand that signs it.</p>
+        </div>
+        <div class="collections__grid" id="collectionsGrid">
+          <!-- cards injected by JS -->
+        </div>
+      </section>
+
+      <!-- ===== FEATURES ===== -->
+      <section class="features" id="features">
+        <div class="features__head">
+          <p class="eyebrow" data-animate>Engineering</p>
+          <h2 class="h-section" data-animate>What lies beneath the sapphire</h2>
+        </div>
+        <div class="features__list">
+          <div class="features__item" data-animate>
+            <div class="features__item-media"><img src="https://images.pexels.com/photos/5312554/pexels-photo-5312554.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Swiss movement mechanism" loading="lazy" /></div>
+            <div class="features__item-text">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <h3>Swiss In-House Movement</h3>
+              <p>A proprietary caliber regulated to ±2 seconds per day, beating at 28,800 vibrations per hour — the rhythm of a mechanical heart refined across generations.</p>
+              <div class="feature-spec">Caliber A-1887 · 72h reserve</div>
+            </div>
+          </div>
+
+          <div class="features__item" data-animate>
+            <div class="features__item-media"><img src="https://images.pexels.com/photos/9352/glass-time-watch-business.jpg?auto=compress&cs=tinysrgb&w=900" alt="Sapphire crystal macro" loading="lazy" /></div>
+            <div class="features__item-text">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+              <h3>Triple-Layer Sapphire Crystal</h3>
+              <p>Grown over sixteen days and polished to optical clarity, our sapphire is nine times harder than stainless steel — virtually unscratchable, eternally transparent.</p>
+              <div class="feature-spec">9H hardness · AR-coated</div>
+            </div>
+          </div>
+
+          <div class="features__item" data-animate>
+            <div class="features__item-media"><img src="https://images.pexels.com/photos/16739804/pexels-photo-16739804.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Titanium watch case" loading="lazy" /></div>
+            <div class="features__item-text">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 12l10 5 10-5"/></svg></div>
+              <h3>Grade-5 Titanium Body</h3>
+              <p>Aerospace-grade titanium, machined from a single billet — 45% lighter than steel, hypoallergenic, and finished with a hand-brushed texture that absorbs light.</p>
+              <div class="feature-spec">Grade 5 Ti · 42mm case</div>
+            </div>
+          </div>
+
+          <div class="features__item" data-animate>
+            <div class="features__item-media"><img src="https://images.pexels.com/photos/37383653/pexels-photo-37383653.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Water resistant watch on wrist" loading="lazy" /></div>
+            <div class="features__item-text">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7Z"/></svg></div>
+              <h3>300m Water Resistance</h3>
+              <p>A triple-gasket crown and monobloc case architecture seal the movement against pressure to 300 metres — engineered for the deep, refined for the surface.</p>
+              <div class="feature-spec">300m · ISO 6425</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== VIDEO ===== -->
+      <section class="video" id="video">
+        <img class="video__bg" id="videoBg" src="https://images.pexels.com/photos/8327817/pexels-photo-8327817.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Cinematic watch mechanism" loading="lazy" />
+        <div class="video__overlay"></div>
+        <div class="video__content" data-animate>
+          <p class="eyebrow">The Sound of Time</p>
+          <h2>28,800 beats per minute.<br>One singular purpose.</h2>
+          <p>Listen to the oscillation that has remained unchanged for a century — the quiet proof that perfection is not invented, only preserved.</p>
+        </div>
+        <button class="video__play" id="videoPlay" aria-label="Play film">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </section>
+
+      <!-- ===== TESTIMONIALS ===== -->
+      <section class="testimonials" id="testimonials">
+        <div class="testimonials__head">
+          <p class="eyebrow" data-animate>Owners</p>
+          <h2 class="h-section" data-animate>Worn by those who measure life in moments</h2>
+        </div>
+        <div class="testimonials__grid" id="testimonialsGrid">
+          <!-- injected by JS -->
+        </div>
+      </section>
+
+      <!-- ===== GALLERY ===== -->
+      <section class="gallery" id="gallery">
+        <div class="gallery__head">
+          <p class="eyebrow" data-animate>The Archive</p>
+          <h2 class="h-section" data-animate>A study in light and material</h2>
+        </div>
+        <div class="gallery__grid" id="galleryGrid">
+          <!-- injected by JS -->
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== CART DRAWER ===== -->
+    <div class="cart__overlay" id="cartOverlay"></div>
+    <aside class="cart" id="cart" aria-label="Shopping cart">
+      <div class="cart__header">
+        <h3>Your Selection<span class="cart__header-count" id="cartCount">(0)</span></h3>
+        <button class="cart__close" id="cartClose" aria-label="Close cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="cart__items" id="cartItems"></div>
+      <div class="cart__footer">
+        <div class="cart__total"><span>Subtotal</span><span id="cartTotal">$0</span></div>
+        <button class="btn btn--primary btn--block" id="checkoutBtn" data-magnetic><span class="btn__shine"></span><span class="btn__label">Proceed to Checkout</span></button>
+      </div>
+    </aside>
+
+    <!-- ===== CHECKOUT MODAL ===== -->
+    <div class="checkout" id="checkout">
+      <div class="checkout__modal" id="checkoutModal">
+        <div class="checkout__head">
+          <h3>Checkout</h3>
+          <button class="checkout__close" id="checkoutClose" aria-label="Close checkout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="checkout__summary" id="checkoutSummary"></div>
+        <form class="checkout__fields" id="checkoutForm">
+          <div class="field"><input type="text" id="coName" placeholder=" " required /><label for="coName">Full name</label></div>
+          <div class="field"><input type="email" id="coEmail" placeholder=" " required /><label for="coEmail">Email address</label></div>
+          <div class="field"><input type="text" id="coAddr" placeholder=" " required /><label for="coAddr">Shipping address</label></div>
+          <div class="field"><input type="text" id="coCard" placeholder=" " required maxlength="19" /><label for="coCard">Card number</label></div>
+          <button type="submit" class="btn btn--primary btn--block" data-magnetic><span class="btn__shine"></span><span class="btn__label">Complete Purchase</span></button>
+        </form>
+        <div class="checkout__success hidden" id="checkoutSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6 9 17l-5-5"/></svg>
+          <h3>Order confirmed</h3>
+          <p>Your timepiece begins its journey. A confirmation has been sent to your inbox.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="contact">
+      <div class="footer__bg"></div>
+      <div class="footer__inner">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <h3>AU<span>RUM</span></h3>
+            <p>Time beyond perfection. Crafted in Switzerland since 1887, for those who measure life in moments, not minutes.</p>
+          </div>
+          <div class="footer__cols">
+            <div class="footer__col">
+              <h4>Maison</h4>
+              <ul><li><a href="#story">Heritage</a></li><li><a href="#viewer">Atelier</a></li><li><a href="#features">Engineering</a></li></ul>
+            </div>
+            <div class="footer__col">
+              <h4>Collection</h4>
+              <ul><li><a href="#collections">Obsidian</a></li><li><a href="#collections">Aurum Gold</a></li><li><a href="#collections">Titan</a></li><li><a href="#collections">Emerald</a></li></ul>
+            </div>
+            <div class="footer__newsletter">
+              <h4>Private List</h4>
+              <p>Receive invitations to private viewings and new references before the world does.</p>
+              <form class="footer__form" id="newsletterForm">
+                <input type="email" placeholder="Your email" required aria-label="Email" />
+                <button type="submit" aria-label="Subscribe">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer__giant" aria-hidden="true">AURUM</div>
+        <div class="footer__bottom">
+          <p>© 2026 AURUM Haute Horlogerie. All rights reserved.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12s0-3-.4-4.3a2.5 2.5 0 0 0-1.7-1.7C18.5 5.6 12 5.6 12 5.6s-6.5 0-7.9.4A2.5 2.5 0 0 0 2.4 7.7C2 9 2 12 2 12s0 3 .4 4.3a2.5 2.5 0 0 0 1.7 1.7c1.4.4 7.9.4 7.9.4s6.5 0 7.9-.4a2.5 2.5 0 0 0 1.7-1.7C22 15 22 12 22 12Z"/><path d="m10 15 5-3-5-3z"/></svg></a>
+            <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.2-6.8L5.3 22H2l7.6-8.7L1.5 2h6.8l4.7 6.2L18.9 2Zm-1.2 18h1.8L7.4 3.8H5.5L17.7 20Z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

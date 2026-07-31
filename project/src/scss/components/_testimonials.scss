@@ -1,0 +1,75 @@
+// ============================================
+// SECTION — Testimonials
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.testimonials {
+  position: relative;
+  background: $black;
+  @include section-padding;
+  overflow: hidden;
+
+  &__head {
+    @include container;
+    text-align: center;
+    margin-bottom: $space-10;
+    .eyebrow { margin-bottom: $space-2; }
+  }
+
+  &__grid {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-4;
+    max-width: 1200px;
+    @include mq($bp-lg) { grid-template-columns: 1fr; }
+  }
+}
+
+.testimonial {
+  @include glass;
+  border-radius: $radius-lg;
+  padding: $space-5;
+  @include flex(column, flex-start, flex-start, $space-3);
+  @include hover-lift(-6px);
+  position: relative;
+
+  &__quote {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    font-weight: $fw-light;
+    line-height: 1.4;
+    color: $text-primary;
+    font-style: italic;
+  }
+
+  &__stars {
+    @include flex(row, flex-start, center, $space-1);
+    color: $gold;
+    svg { width: 16px; height: 16px; }
+  }
+
+  &__author {
+    @include flex(row, flex-start, center, $space-3);
+    margin-top: auto;
+    padding-top: $space-3;
+    border-top: 1px solid $glass-border;
+    width: 100%;
+
+    &-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid $gold-glass-border;
+    }
+
+    &-info {
+      @include flex(column, flex-start, flex-start, 0);
+      strong { font-size: 0.95rem; font-weight: $fw-medium; }
+      span { font-size: 0.78rem; color: $text-muted; font-family: $font-mono; letter-spacing: 0.1em; }
+    }
+  }
+}

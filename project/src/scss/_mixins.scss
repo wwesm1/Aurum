@@ -1,0 +1,102 @@
+// ============================================
+// MIXINS
+// ============================================
+
+@use 'variables' as *;
+
+@mixin mq($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin mq-up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin flex($dir: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin glass($bg: $glass-bg, $border: $glass-border, $blur: $glass-blur) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border;
+}
+
+@mixin gold-text {
+  background: $gold-gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@mixin gold-border($width: 1px) {
+  border: $width solid transparent;
+  border-image: $gold-gradient 1;
+}
+
+@mixin absolute-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin hover-lift($y: -6px) {
+  transition: transform $dur-med $ease-lux, box-shadow $dur-med $ease-lux;
+  &:hover {
+    transform: translateY($y);
+  }
+}
+
+@mixin noise-overlay($opacity: 0.04) {
+  position: relative;
+  &::after {
+    content: '';
+    @include absolute-fill;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+    opacity: $opacity;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+}
+
+@mixin scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin section-padding {
+  padding: $space-20 $gutter;
+  @include mq($bp-lg) {
+    padding: $space-16 $gutter;
+  }
+  @include mq($bp-md) {
+    padding: $space-12 $space-3;
+  }
+}
+
+@mixin container {
+  max-width: $container-max;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 4px;
+  }
+}

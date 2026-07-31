@@ -1,0 +1,60 @@
+// ============================================
+// SECTION — Gallery (Masonry)
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.gallery {
+  position: relative;
+  background: $charcoal;
+  @include section-padding;
+  overflow: hidden;
+
+  &__head {
+    @include container;
+    text-align: center;
+    margin-bottom: $space-10;
+    .eyebrow { margin-bottom: $space-2; }
+  }
+
+  &__grid {
+    @include container;
+    max-width: 1300px;
+    columns: 3;
+    column-gap: $space-3;
+    @include mq($bp-lg) { columns: 2; }
+    @include mq($bp-md) { columns: 1; }
+  }
+
+  &__item {
+    break-inside: avoid;
+    margin-bottom: $space-3;
+    border-radius: $radius-md;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 1s $ease-lux, filter 0.6s $ease-lux;
+      filter: brightness(0.9) saturate(0.95);
+    }
+
+    &::after {
+      content: '';
+      @include absolute-fill;
+      background: linear-gradient(135deg, transparent 50%, rgba($gold, 0.15));
+      opacity: 0;
+      transition: opacity $dur-med $ease-lux;
+      pointer-events: none;
+    }
+
+    &:hover {
+      img { transform: scale(1.06); filter: brightness(1.05) saturate(1.1); }
+      &::after { opacity: 1; }
+    }
+  }
+}

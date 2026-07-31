@@ -1,0 +1,51 @@
+// ============================================
+// COMPONENT — Custom Cursor
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+
+  @include mq($bp-md) { display: none; }
+
+  &__dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: $gold-bright;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s $ease-lux, height 0.2s $ease-lux, background 0.2s;
+  }
+
+  &__ring {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba($gold, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s $ease-lux, height 0.3s $ease-lux, border-color 0.3s, opacity 0.3s;
+  }
+
+  &.is-hovering {
+    .cursor__dot { width: 0; height: 0; }
+    .cursor__ring {
+      width: 64px;
+      height: 64px;
+      border-color: $gold-bright;
+      background: rgba($gold, 0.08);
+    }
+  }
+
+  &.is-down {
+    .cursor__ring { width: 32px; height: 32px; }
+  }
+}

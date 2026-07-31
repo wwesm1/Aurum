@@ -1,0 +1,54 @@
+// ============================================
+// COMPONENT — Loader
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: $black;
+  @include flex(column, center, center);
+  gap: $space-3;
+  transition: opacity 0.8s $ease-lux, visibility 0.8s;
+
+  &.is-done {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__brand {
+    font-family: $font-display;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: $fw-light;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    @include gold-text;
+    overflow: hidden;
+    .char {
+      display: inline-block;
+      transform: translateY(110%);
+    }
+  }
+
+  &__bar {
+    width: min(280px, 60vw);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    &-fill {
+      height: 100%;
+      width: 0;
+      background: $gold-gradient;
+    }
+  }
+
+  &__count {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: $text-muted;
+  }
+}
