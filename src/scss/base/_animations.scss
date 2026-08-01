@@ -1,7 +1,3 @@
-// ============================================
-// ANIMATIONS / KEYFRAMES
-// ============================================
-
 @use '../variables' as *;
 
 @keyframes float-soft {
@@ -68,14 +64,12 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-// Utility animation classes
 .anim-float { animation: float-soft 6s ease-in-out infinite; }
 .anim-float-slow { animation: float-slow 4s ease-in-out infinite; }
 .anim-spin-slow { animation: spin-slow 40s linear infinite; }
 .anim-spin-reverse { animation: spin-reverse 60s linear infinite; }
 .anim-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
 
-// GSAP initial states (prevents FOUC)
 [data-animate] {
   opacity: 0;
 }
