@@ -1,7 +1,3 @@
-// ============================================
-// MAIN — orchestration entry point
-// ============================================
-
 import './scss/main.scss'
 
 import Lenis from 'lenis'
@@ -15,10 +11,8 @@ import { initMagnetic } from './js/magnetic.js'
 import { initCart } from './js/cart.js'
 import { renderContent } from './js/render.js'
 
-// Render dynamic content first so DOM nodes exist
 renderContent()
 
-// Smooth scrolling
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -30,7 +24,6 @@ function raf(time) {
 }
 requestAnimationFrame(raf)
 
-// Anchor links use Lenis
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href')
@@ -44,7 +37,6 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   })
 })
 
-// Init everything after loader completes
 initLoader(() => {
   initCursor()
   initNav(lenis)
@@ -55,7 +47,6 @@ initLoader(() => {
   initCart()
 })
 
-// Newsletter form
 const newsletter = document.getElementById('newsletterForm')
 if (newsletter) {
   newsletter.addEventListener('submit', (e) => {
@@ -72,7 +63,6 @@ if (newsletter) {
   })
 }
 
-// Video play (decorative — toggles a subtle zoom)
 const videoPlay = document.getElementById('videoPlay')
 const videoBg = document.getElementById('videoBg')
 if (videoPlay && videoBg) {
