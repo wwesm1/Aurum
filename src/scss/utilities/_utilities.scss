@@ -1,7 +1,3 @@
-// ============================================
-// UTILITIES
-// ============================================
-
 @use '../variables' as *;
 @use '../mixins' as *;
 
@@ -40,6 +36,5 @@
 .full-vh { min-height: 100vh; }
 .section-pad { @include section-padding; }
 
-// Reveal helper for JS
 .reveal { opacity: 0; transform: translateY(40px); }
 .reveal-scale { opacity: 0; transform: scale(0.94); }
