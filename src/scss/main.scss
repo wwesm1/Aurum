@@ -1,20 +1,13 @@
-// ============================================
-// MAIN STYLESHEET ENTRY
-// ============================================
-
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// Base
 @use 'base/reset';
 @use 'base/typography';
 @use 'base/animations';
 
-// Layout
 @use 'layout/nav';
 @use 'layout/footer';
 
-// Components
 @use 'components/cursor';
 @use 'components/loader';
 @use 'components/buttons';
@@ -28,5 +21,4 @@
 @use 'components/gallery';
 @use 'components/cart';
 
-// Utilities
 @use 'utilities/utilities';
